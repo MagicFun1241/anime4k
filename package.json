@@ -1,0 +1,40 @@
+{
+  "name": "@magicfun1241/anime4k",
+  "version": "1.0.0",
+  "description": "Image upscale",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "install": "node install.js"
+  },
+  "files": [
+    "lib",
+    "install.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicFun1241/anime4k.git"
+  },
+  "keywords": [
+    "anime4k",
+    "upscale"
+  ],
+  "author": "MagicFun1241",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MagicFun1241/anime4k/issues"
+  },
+  "homepage": "https://github.com/MagicFun1241/anime4k#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "nanoid": "^3.1.12",
+    "progress": "^2.0.3",
+    "temp-dir": "^2.0.0",
+    "unzipper": "^0.10.11"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.10",
+    "typescript": "^4.0.3"
+  }
+}
