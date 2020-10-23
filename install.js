@@ -54,6 +54,7 @@ download(`https://github.com/MagicFun1241/anime4k/releases/download/${releaseTag
     read.on("end", () => {
         console.log("Extracted");
 
+        fs.chmodSync(path.join(binaryDirectory, platform === 'win32' ? 'Anime4KCPP_CLI.exe' : 'Anime4KCPP_CLI'), 0o755);
         fs.unlinkSync(releaseFileName);
 
         console.log("Cleaned");
