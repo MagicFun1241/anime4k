@@ -38,7 +38,7 @@ function download(url, fileName) {
 }
 
 const platform = os.platform();
-const releaseTag = "v1.0";
+const releaseTag = "v1.1";
 
 if (!fs.existsSync(tempDirectory)) fs.mkdirSync(tempDirectory);
 
@@ -46,7 +46,19 @@ if (!fs.existsSync(binaryDirectory)) fs.mkdirSync(binaryDirectory);
 
 const releaseFileName = path.join(tempDirectory, "release.zip");
 
-download(`https://github.com/MagicFun1241/anime4k/releases/download/${releaseTag}/${platform}.zip`, releaseFileName).then(() => {
+let downloadFileName;
+
+switch (platform) {
+    case "linux":
+        downloadFileName = `${platform}_${os.arch()}`;
+        break;
+
+    default:
+        downloadFileName = `${platform}.zip`;
+        break;
+}
+
+download(`https://github.com/MagicFun1241/anime4k/releases/download/${releaseTag}/${downloadFileName}`, releaseFileName).then(() => {
     console.log("Successfully downloaded!");
 
     const read = fs.createReadStream(releaseFileName);
