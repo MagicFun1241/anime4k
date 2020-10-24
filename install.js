@@ -50,7 +50,7 @@ let downloadFileName;
 
 switch (platform) {
     case "linux":
-        downloadFileName = `${platform}_${os.arch()}`;
+        downloadFileName = `${platform}_${os.arch()}.zip`;
         break;
 
     default:
